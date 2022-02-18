@@ -1,0 +1,177 @@
+@font-face{font-family:"genjiro";
+    src:url("fonts/genjiro.woff2") format("woff2"),
+    url("fonts/genjiro.woff") format("woff"),
+    url("fonts/genjiro.ttf") format("truetype"),
+    url("fonts/genjiro.otf") format("opentype")
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main_grid {
+    display: grid;
+    margin: 25px;
+    column-gap: 25px;
+    row-gap: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(3, 30vw);
+    grid-template-rows: repeat(4, 30vw);
+    grid-template-areas: 
+    "A B C"
+    "D E F"
+    "G H I"
+    "J K L";
+}
+
+.grid_square {
+    position: relative;
+    background-color: blue;
+    border-radius: 15px;
+}
+
+.nagostyles {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.nagotop {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 500ms;
+}
+
+
+.link {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+
+    font-family: "genjiro";
+    font-size: 4vw;
+    text-decoration: none;
+    color: white;
+
+    margin: 84% 0 0 17%;
+
+    transition-property: color;
+    transition-duration: 500ms;
+}
+
+.link:hover {
+    color: red;
+}
+
+.grid_square:hover .nagotop {
+    opacity: 0;
+}
+
+.grid_square:hover .link {
+    opacity: 1;
+}
+
+.square1 {
+    grid-area: A;
+}
+
+.square2 {
+    grid-area: B;
+}
+
+.square3 {
+    grid-area: C;
+}
+
+.square4 {
+    grid-area: D;
+}
+
+.square5 {
+    grid-area: E;
+}
+
+.square6 {
+    grid-area: F;
+}
+
+.square7 {
+    grid-area: G;
+}
+
+.square8 {
+    grid-area: H;
+}
+
+.square9 {
+    grid-area: I;
+}
+
+.square10 {
+    grid-area: J;
+}
+
+.square11 {
+    grid-area: K;
+}
+
+.square12 {
+    grid-area: L;
+}
+
+/* Media Queries (NIEUW) */ 
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .main_grid {
+        grid-template-columns: 90vw;
+        grid-template-rows: repeat(12, 90vw);
+        grid-template-areas: 
+        "A"
+        "B"
+        "C"
+        "D"
+        "E"
+        "F"
+        "G"
+        "H"
+        "I"
+        "J"
+        "K"
+        "L";
+    }
+
+    .link {
+        font-size: 12vw;
+    }
+}
+
+/* Tablet */ 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .main_grid {
+        grid-template-columns: repeat(2, 45vw);
+        grid-template-rows: repeat(6, 45vw);
+        grid-template-areas: 
+        "A B"
+        "C D"
+        "E F"
+        "G H"
+        "I J"
+        "K L";
+    }
+
+    .link {
+       font-size: 6vw;
+    }
+
+
+}        
